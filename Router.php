@@ -19,6 +19,9 @@
                 case 'produto':
                     if($method === 'GET'){
                         if(isset($route[1])){
+                            if(is_numeric($route[1])){
+                                return $this->controller->getForId($route[1]);
+                            }
                             return $this->controller->search($route[1]);
                         }else{
                             return $this->controller->getAll();

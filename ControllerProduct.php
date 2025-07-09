@@ -12,6 +12,10 @@
             return $this->productDao->GetAll();
         }
 
+        public function getForId($id){
+            return $this->productDao->GetForId($id);
+        }
+
         public function create($name, $desc, $value, $amount, $image){
             return $this->productDao->create($name, $desc, $value, $amount, $image);
         }

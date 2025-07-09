@@ -37,6 +37,14 @@ Retorna todos os produtos cadastrados no banco de dados.
 
 ---
 
+### ➤ Listar Todos os Produtos
+
+**GET /api/produto/{id}**
+
+Retorna produto cadastrado com o id específico.
+
+---
+
 ### ➤ Pesquisar Produtos por Nome
 
 **GET /api/produto/{nome}**

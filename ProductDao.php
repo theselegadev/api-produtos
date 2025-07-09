@@ -42,14 +42,30 @@
 
             $products = $res->rowCount()>0 ? [
                 'status' => 'success',
-                 'data' => $res->fetchAll(\PDO::FETCH_ASSOC)
-                 ]
-                  : [
-                    'status' => 'error',
-                     'data' => 'Nenhum produto cadastrado!'
-                    ];
+                'data' => $res->fetchAll(\PDO::FETCH_ASSOC)
+            ] : [
+                'status' => 'error',
+                'data' => 'Nenhum produto cadastrado!'
+            ];
             
             return $products;
+        }
+
+        // Pegar dados por id
+        public function GetForId($id){
+            $sql = "SELECT * FROM PRODUTO WHERE ID = $id";
+            
+            $res = ConnectDB::getConnect()->query($sql);
+
+            $product = $res->rowCount()>0 ? [
+                'status' => 'success',
+                'data' => $res->fetch(\PDO::FETCH_ASSOC)
+            ] : [
+                'status' => 'error',
+                'data' => 'Nenhum produto encontrado'
+            ];
+
+            return $product;
         }
 
         // Pesquisar dados

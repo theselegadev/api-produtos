@@ -37,7 +37,7 @@ Retorna todos os produtos cadastrados no banco de dados.
 
 ---
 
-### ➤ Listar Todos os Produtos
+### ➤ Listar os Produtos por id
 
 **GET /api/produto/{id}**
 
